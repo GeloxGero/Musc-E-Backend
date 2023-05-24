@@ -1,7 +1,7 @@
 const allowedOrigins = [
-    'https://localhost:3000',
-    'https://www.musc-e.com',
-    'https://musc-e.com'
+    'http://localhost:3000',
+    'http://www.musc-e.com',
+    'http://musc-e.com'
 ];
 
 module.exports = allowedOrigins;

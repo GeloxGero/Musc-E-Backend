@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "Customer"
     }],
+    
     active: {
         type: Boolean,
         default: true
