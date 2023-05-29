@@ -6,19 +6,20 @@ const receiptSchema = new mongoose.Schema(
         user: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            ref: 'Order'
+            ref: 'User'
         },
-        title: {
-            type: String,
+        product: [{
+            type: mongoose.Schema.Types.ObjectId,
+            require: true,
+            ref: 'Product'
+        }],
+        total: {
+            type: Number,
             required: true
         }, 
-        text: {
+        transaction: {
             type: String,
             required: true
-        },
-        completed: {
-            type: Boolean,
-            default: false
         }
     },
     {
@@ -27,9 +28,9 @@ const receiptSchema = new mongoose.Schema(
 );
 
 receiptSchema.plugin(AutoIncrement, {
-    inc_field: 'receipt',
-    id: 'receiptNums',
-    start_seq: 32000
+    inc_field: 'record',
+    id: 'recordNums',
+    start_seq: 30500
 })
 
 module.exports = mongoose.model('Receipt', receiptSchema);

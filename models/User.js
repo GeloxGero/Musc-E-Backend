@@ -9,17 +9,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    roles: [{
+    roles: {
         type: String,
         default: "Customer"
-    }],
-    
+    },
     active: {
         type: Boolean,
         default: true
     }
-
-
 });
 
 module.exports = mongoose.model('User', userSchema);

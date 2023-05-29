@@ -40,7 +40,7 @@ const createNewUser = asyncHandler(async (req, res) => {
     const hashedPwd = await bcrypt.hash(password, 10) // salt rounds
 
     const userObject = (!Array.isArray(roles) || !roles.length)
-        ?   { username, "password": hashedPwd}
+        ?   {username, "password": hashedPwd}
         :   {username, "password": hashedPwd, roles}
 
     // Create and store new user 
