@@ -27,8 +27,8 @@ const receiptSchema = new mongoose.Schema(
 );
 
 receiptSchema.plugin(AutoIncrement, {
-    inc_field: 'ticket',
-    id: 'ticketNums',
+    inc_field: 'receipt',
+    id: 'receiptNums',
     start_seq: 32000
 })
 
